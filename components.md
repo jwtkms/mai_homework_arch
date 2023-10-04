@@ -12,8 +12,7 @@ AddElementTag("microService", $shape=EightSidedShape(), $bgColor="CornflowerBlue
 AddElementTag("storage", $shape=RoundedBoxShape(), $bgColor="lightSkyBlue", $fontColor="white")
 
 Person(user, "Пользователь")
-Person(product, "Товар")
-Person(cart, "Корзина")
+
 
 
 System_Ext(web_site, "Клиентский веб-сайт", "HTML, CSS, JavaScript, React", "Веб-интерфейс")
@@ -24,7 +23,8 @@ System_Boundary(conference_site, "Сайт магазина") {
    Container(products_service, "Сервис товаров", "C++", "Сервис управления товарами", $tags = "microService") 
    Container(cart_service, "Сервис корзины", "C++", "Сервис управления корзиной", $tags = "microService")   
    ContainerDb(db, "База данных", "MySQL", "Хранение данных о пользователях, товарах и корзин пользователей", $tags = "storage")
-   
+   Container(product, "Товар")
+   Container(cart, "Корзина")
 }
 
 Rel(user, web_site, "Регистрация, просмотр информации о товарах, добаваление товара в корзину, просмотр корзины")
