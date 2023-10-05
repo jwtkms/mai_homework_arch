@@ -6,17 +6,12 @@
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
 Person(user, "Пользователь")
-Person(product, "Товар")
-Person(cart, "Корзина")
-
 
 System(conference_site, "Сайт магазина", "Веб-сайт магазина для продажи товаров")
 
 
 
 Rel(user, conference_site, "Регистрация, просмотр/изменение информации о блогах и публикациях")
-Rel(product, web_site, "Добавление нового товара, редактироване и отображение информации о товаре")
-Rel(cart, web_site, "Заполнение корзины, просмотр содержимого")
 
 
 

@@ -23,13 +23,11 @@ System_Boundary(conference_site, "Сайт магазина") {
    Container(products_service, "Сервис товаров", "C++", "Сервис управления товарами", $tags = "microService") 
    Container(cart_service, "Сервис корзины", "C++", "Сервис управления корзиной", $tags = "microService")   
    ContainerDb(db, "База данных", "MySQL", "Хранение данных о пользователях, товарах и корзин пользователей", $tags = "storage")
-   Container(product, "Товар")
-   Container(cart, "Корзина")
+
 }
 
 Rel(user, web_site, "Регистрация, просмотр информации о товарах, добаваление товара в корзину, просмотр корзины")
-Rel(product, web_site, "Добавление нового товара, редактироване и отображение информации о товаре")
-Rel(cart, web_site, "Заполнение корзины, просмотр содержимого")
+
 
 
 
@@ -111,8 +109,8 @@ class Cart {
   product_id
 }
 
-User <- Cart
-Cart <- Products
+User <- Products
+Products <- Cart
 
 @enduml
 ```
